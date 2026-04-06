@@ -72,7 +72,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-debug-${{ github.sha }}
-        path: app/build/outputs/apk/debug/*.apk
+        path: TMessagesProj_App/build/outputs/apk/debug/*.apk
         retention-days: 30
     
     - name: Upload Release APK
@@ -80,6 +80,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-release-${{ github.sha }}
-        path: app/build/outputs/apk/release/*.apk
+        path: TMessagesProj_App/build/outputs/apk/release/*.apk
         retention-days: 90
     
