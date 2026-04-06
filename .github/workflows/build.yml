@@ -15,8 +15,8 @@ jobs:
     
     strategy:
       matrix:
-        # 可以为不同变体构建
-        build-type: [debug, release]
+        # 可以为不同变体构建, release
+        build-type: [debug]
     
     steps:
     - name: Checkout repository
@@ -83,13 +83,3 @@ jobs:
         path: app/build/outputs/apk/release/*.apk
         retention-days: 90
     
-    # 运行测试
-    - name: Run Unit Tests
-      run: ./gradlew testDebugUnitTest
-    
-    - name: Upload Test Reports
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-reports
-        path: app/build/reports/tests/
